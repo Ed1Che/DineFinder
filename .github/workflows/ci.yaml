@@ -1,0 +1,44 @@
+name: Expo CI
+
+on:
+  push:
+    branches: [app]
+  pull_request:
+    branches: [app]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Expo CLI
+        run: npm install -g expo-cli
+
+      - name: Lint
+        run: npm run lint --if-present
+
+      - name: Run tests
+        run: npm test --if-present
+
+      - name: Expo build (preview)
+        run: expo build:android --non-interactive || echo "Expo build step is optional for preview"
+
+      # Optionally, you can add EAS Build if you use EAS:
+      # - name: Install EAS CLI
+      #   run: npm install -g eas-cli
+      # - name: EAS Build (preview)
+      #   run: eas build --platform android --non-interactive
+
+      - name: Check Expo project
+        run: expo whoami || echo "Expo not logged in, skipping publish/check"
