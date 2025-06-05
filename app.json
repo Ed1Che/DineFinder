@@ -1,0 +1,41 @@
+{
+  "name": "main",
+  "expo": {
+    "name": "DineFinder",
+    "description": "DineFinder is a mobile application that helps users find restaurants, view menus, and make reservations.",
+    "slug": "dinefinder",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "dinefinder",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.qula.dinefinder"
+    },
+    "android": {
+      "package": "com.qula.dinefinder",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "permissions": []
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "1"
+      }
+    }
+  }
+}
+

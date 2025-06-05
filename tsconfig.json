@@ -1,0 +1,58 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "NodeNext",
+    "jsx": "react-native",
+    "moduleResolution": "nodenext",
+    "customConditions": ["react-native"],
+    "strict": true,
+    "noEmit": true,
+    "allowJs": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "types": [
+      "react-native"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": [
+        "components/*"
+      ],
+      "@screens/*": [
+        "screens/*"
+      ],
+      "@models/*": [
+        "models/*"
+      ],
+      "@auth/*": [
+        "auth/*"
+      ],
+      "@utils/*": [
+        "utils/*"
+      ],
+      "@navigation/*": [
+        "navigation/*"
+      ],
+      "@supabase/*": [
+        "supabase/*"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "babel.config.js",
+    "metro.config.js",
+    "jest.config.js"
+  ],
+  "extends": "expo/tsconfig.base",
+  "include": [
+    "components/**/*",
+    "screens/**/*",
+    "models/**/*",
+    "auth/**/*",
+    "utils/**/*",
+    "navigation/**/*",
+    "supabase/**/*"
+  ]
+}
